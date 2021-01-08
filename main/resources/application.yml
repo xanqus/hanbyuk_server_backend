@@ -1,0 +1,22 @@
+server:
+  port: 80
+spring:  servlet:    multipart:      enabled: true
+      max-file-size: 200MB
+      max-request-size: 215MB  datasource:
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/at?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Seoul&useOldAliasMetadataBehavior=true&zeroDateTimeNehavior=convertToNull
+mybatis:
+  type-aliases-package: com.example.hanbyuk_server.dto      
+file:  upload-dir: /Users/user/Documents/UPLOAD_FILES
+  
+---
+
+spring:
+  profiles: production
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/at?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 1234
